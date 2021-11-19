@@ -7,10 +7,11 @@ import javax.ws.rs.core.MediaType;
 public class LoginService {
 
     @POST
-    public String postLoginData(LoginData login)
-    {
+    public String postLoginData(LoginData login) {
         if (login!=null && "brian".equals(login.getUsername()) && "kodeord".equals(login.getPassword())){
-            return JWTHandler.generateJwtToken(new User(login.getUsername(), ""));
+            String token = JWTHandler.generateJwtToken(new User(login.getUsername(), ""));
+            System.out.println(token);
+            return "Bearer" + token;
         }
         throw new WebApplicationException("forkert brugernavn/kodeord",401);
     }

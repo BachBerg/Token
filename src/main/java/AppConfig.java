@@ -2,7 +2,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 
 import javax.ws.rs.ApplicationPath;
 
-@ApplicationPath("/Token")
+@ApplicationPath("rest")
 public class AppConfig extends ResourceConfig {
 
 }
